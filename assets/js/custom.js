@@ -35,6 +35,12 @@ $(document).ready(function($) {
       $('#footer').append(data);
     });
 
+	//lang tabs flag
+	$('.selection_lang').click(function(){
+		n = $(this).index();
+		$(this).removeClass('_gost').siblings('.selection_lang').addClass('_gost');
+		$('.flag_lang').addClass('_gost').eq(n).removeClass('_gost');
+	});
     // modal blocks
     $.get("modal_log_in.html", function(data){
       $('#login-modal-open').append(data);
@@ -71,7 +77,7 @@ $(document).ready(function($) {
 
 	//click closse
 	$('.s_admin__box_content_pas-use__del').click(function(){
-		$(this).parents('.s_admin__box_content_pas-use_block').animate({height: 'toggle', bottom: '100px', opacity: '0'}, 250);
+		$(this).parents('.s_admin__box_content_pas-use_block').animate({height: 'toggle', opacity: '0'}, 170);
 	});
 
 	//map
@@ -778,6 +784,7 @@ $(window).load(function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_field'), {
     componentRestrictions: {country: 'cy'}
 });

@@ -19,13 +19,17 @@
 				<nav class="primary start main-menu">
 					<ul class="nav navbar-nav pull-right">
 						<li><a href="#" data-toggle="modal" data-target="#modal-login"><img src="assets/img/login-icon.png" alt="">Log in</i></a></li>
-						<li><a href="#" data-toggle="modal" data-target="#modal-register">Regestration</a></li>
-            			<li>
+						<li><a href="#" data-toggle="modal" data-target="#modal-register">Registration</a></li>
+            			<li class="has-child">
+							<img class="flag_lang" src="assets/img/flag/uk.svg">
+							<img class="flag_lang _gost" src="assets/img/flag/gr.svg">
+							<img class="flag_lang _gost" src="assets/img/flag/ru.svg">
+							<img class="flag_lang _gost" src="assets/img/flag/cn.svg">
 							<select class="selection" id="menu-language" onChange="window.location.href=this.value">
-								<option data-data="{path:'uk.svg'}" value="index_v_1.html">EN</option>
-                				<option data-data="{path:'gr.svg'}" value="rtl.html">GR</option>
-								<option data-data="{path:'ru.svg'}" value="index_v_1.html">RU</option>
-               					<option data-data="{path:'cn.svg'}" value="index_v_1.html">CN</option>
+								<option class="selection_lang" data-data="{path:'uk.svg'}" value="index_v_1.html">EN</option>
+                				<option class="selection_lang _gost" data-data="{path:'gr.svg'}" value="rtl.html">GR</option>
+								<option class="selection_lang _gost" data-data="{path:'ru.svg'}" value="">RU</option>
+               					<option class="selection_lang _gost" data-data="{path:'cn.svg'}" value="">CN</option>
 							</select>
 						</li>
 					</ul>
@@ -40,7 +44,16 @@
 	              				<li><a href="search_result.html">Commercial</a></li>
 							</ul>
 						</li>
-            			<li class="has-child"><a href="search_result.html">For Rent</a>
+            			<li class="has-child"><a href="search_result.html">Rent long term</a>
+							<ul class="child-navigation">
+								<li><a href="search_result.html">Apartment</a></li>
+								<li><a href="search_result.html">House</a></li>
+	              				<li><a href="search_result.html">Land</a></li>
+	              				<li><a href="search_result.html">Industrial</a></li>
+	              				<li><a href="search_result.html">Commercial</a></li>
+							</ul>
+						</li>
+						<li class="has-child"><a href="search_result.html">Rent short term</a>
 							<ul class="child-navigation">
 								<li><a href="search_result.html">Apartment</a></li>
 								<li><a href="search_result.html">House</a></li>
@@ -65,7 +78,7 @@
 								<li><a href="blog_article_styles.html">Living In Cyprus</a></li>
 								<li><a href="blog_video.html">Cyprus Lifestyle</a></li>
 							</ul>
-						</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -145,6 +158,13 @@
 			</div>
 		</header><!-- /.navbar -->
 	</div>
+	<script>
+//		$('.selection_lang').click(function(){
+//			n = $(this).index();
+//			$(this).addClass('_current').siblings('.selection_lang').removeClass('_current');
+//			$('.flag_lang').removeClass('_current').eq(n).addClass('_current');
+//		});
+	</script>
 </body>
 </html>
 
