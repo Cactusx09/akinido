@@ -35,6 +35,28 @@ $(document).ready(function($) {
       $('#footer').append(data);
     });
 
+	//flag
+	function myFunction() {
+		$("#myDropdown").classList.toggle("show_l");
+	}
+
+	$('#myDropdown').click(function(){
+		$('dropdown-content').css('display', 'block');
+	});
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = $(".dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show_l')) {
+			openDropdown.classList.remove('show_l');
+		  }
+		}
+	  }
+	}
 	//lang tabs flag
 	$('.selection_lang').click(function(){
 		n = $(this).index();
@@ -84,7 +106,6 @@ $(document).ready(function($) {
 	$('.map_input , .btn_position').click(function(){
 		$('.map').addClass('visible');
 	});
-
 
 	//admin page >> agency details >> password and users hide/show select
 	$('._helper_for_hide_select').click(function(){
@@ -469,7 +490,6 @@ $(document).ready(function($) {
 		$("#agency_click").trigger("click");
 		$(this).closest('.prop_itm2').addClass('active').siblings().removeClass('active');
 	});
-
 
 	//graph
 	var barChartData = {

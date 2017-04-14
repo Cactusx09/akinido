@@ -20,7 +20,25 @@
 					<ul class="nav navbar-nav pull-right">
 						<li><a href="#" data-toggle="modal" data-target="#modal-login"><img src="assets/img/login-icon.png" alt="">Log in</i></a></li>
 						<li><a href="#" data-toggle="modal" data-target="#modal-register">Registration</a></li>
-            			<li class="has-child">
+            			<li>
+            				<div class="lang">
+								<button onclick="language()" class="lang_btn"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</button>
+								<div id="menu_language" class="lang_content">
+									<a href="index_v_1.html"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</a>
+									<a href="rtl.html"><img class="lang_flag" src="assets/img/flag/gr.svg">GR</a>
+									<a href="index_v_1.html"><img class="lang_flag" src="assets/img/flag/ru.svg">RU</a>
+									<a href="index_v_1.html"><img class="lang_flag" src="assets/img/flag/cn.svg">CN</a>
+								</div>
+							</div>
+<!--
+            				<ul class="child-navigation">
+								<li><a href="search_result.html">EN</a></li>
+								<li><a href="search_result.html">GR</a></li>
+	              				<li><a href="search_result.html">RU</a></li>
+	              				<li><a href="search_result.html">CN</a></li>
+							</ul>
+-->
+<!--
 							<img class="flag_lang" src="assets/img/flag/uk.svg">
 							<img class="flag_lang _gost" src="assets/img/flag/gr.svg">
 							<img class="flag_lang _gost" src="assets/img/flag/ru.svg">
@@ -31,6 +49,7 @@
 								<option class="selection_lang _gost" data-data="{path:'ru.svg'}" value="">RU</option>
                					<option class="selection_lang _gost" data-data="{path:'cn.svg'}" value="">CN</option>
 							</select>
+-->
 						</li>
 					</ul>
 					<ul class="nav navbar-nav pull-right">
@@ -159,11 +178,22 @@
 		</header><!-- /.navbar -->
 	</div>
 	<script>
-//		$('.selection_lang').click(function(){
-//			n = $(this).index();
-//			$(this).addClass('_current').siblings('.selection_lang').removeClass('_current');
-//			$('.flag_lang').removeClass('_current').eq(n).addClass('_current');
-//		});
+		function language() {
+			document.getElementById("menu_language").classList.toggle("show");
+		}
+		window.onclick = function(event) {
+			if (!event.target.matches('.lang_btn')) {
+
+				var dropdowns = document.getElementsByClassName("lang_content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+			  		if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+			  		}
+				}
+		  	}
+		}
 	</script>
 </body>
 </html>
