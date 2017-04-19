@@ -1724,8 +1724,11 @@
 <div id="agency-modal-open"></div>
 <!-- End Modal login, register, custom gallery, agency message -->
 
+<!--
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4PfF1IcaUGi9v_jlJ3TeeMss7adWLoLA&libraries=places&callback=initMap"
     async defer></script>
+-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places&key=AIzaSyC4PfF1IcaUGi9v_jlJ3TeeMss7adWLoLA"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1746,8 +1749,11 @@
 	<script type="text/javascript" src="assets/js/custom-map.js"></script>
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	<script>
-		function initMap(){
-			var tribece = {lat: 40.719457, lng: -73.989642};
+		var _latitude = 40.719457;
+		var _longitude = -73.989642;
+		google.maps.event.addDomListener(window, 'load', initMap(_latitude,_longitude));
+		function initMap(_latitude,_longitude){
+			var tribece = new google.maps.LatLng(_latitude,_longitude);
 
 			var map = new google.maps.Map(document.getElementById('map'), {
 				center: tribece,
@@ -1757,8 +1763,17 @@
 			var marker = new google.maps.Marker({
 				position: tribece,
 				map: map,
-				labelAnchor: new google.maps.Point(30, 0),
+				icon: 'assets/img/marker-h.png',
+				labelAnchor: new google.maps.Point(50, 0),
 				draggable: true
+			});
+
+			$('#map').removeClass('fade-map');
+			google.maps.event.addListener(marker, "mouseup", function (event) {
+				var latitude = this.position.lat();
+				var longitude = this.position.lng();
+				$('#latitude').val( this.position.lat() );
+				$('#longitude').val( this.position.lng() );
 			});
 
 
@@ -1785,6 +1800,8 @@
 
 				marker.setPosition(place.geometry.location);
 				marker.setVisible(true);
+				$('#latitude').val( marker.getPosition().lat() );
+				$('#longitude').val( marker.getPosition().lng() );
 
 				var address = '';
 				if (place.address_components) {
@@ -1807,6 +1824,8 @@
 						marker.setPosition(pos);
 						marker.setVisible(true);
 						map.setCenter(pos);
+						$('#latitude').val( marker.getPosition().lat() );
+						$('#longitude').val( marker.getPosition().lng() );
 					}, function() {
 						handleLocationError(true, marker, map.getCenter());
 					});
@@ -1842,6 +1861,11 @@
 					marker.setContent('Elevation service failed due to: ' + status);
 				}
 			});
+		}
+		function success(position) {
+			initSubmitMap(position.coords.latitude, position.coords.longitude);
+			$('#latitude').val( position.coords.latitude );
+			$('#longitude').val( position.coords.longitude );
 		}
 	</script>
 
