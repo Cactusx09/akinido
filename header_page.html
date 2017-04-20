@@ -18,11 +18,14 @@
 				</div>
 				<nav class="primary start main-menu">
 					<ul class="nav navbar-nav pull-right">
-						<li><a href="#" data-toggle="modal" data-target="#modal-login"><img src="assets/img/login-icon.png" alt="">Log in</i></a></li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#modal-login"><img src="assets/img/login-icon.png" alt="">Log in</i>
+							</a>
+						</li>
 						<li><a href="#" data-toggle="modal" data-target="#modal-register">Registration</a></li>
-            			<li>
-            				<div class="lang">
-								<button onclick="language()" class="lang_btn"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</button>
+						<li>
+							<div  onclick="language()" class="lang">
+								<button class="lang_btn"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</button>
 								<div id="menu_language" class="lang_content">
 									<a href="rtl.html"><img class="lang_flag" src="assets/img/flag/cn.svg">GR</a>
 									<a href="index_v_1.html"><img class="lang_flag" src="assets/img/flag/ru.svg">RU</a>
@@ -37,34 +40,34 @@
 							<ul class="child-navigation">
 								<li><a href="search_result.html">Apartment</a></li>
 								<li><a href="search_result.html">House</a></li>
-	              				<li><a href="search_result.html">Land</a></li>
-	              				<li><a href="search_result.html">Industrial</a></li>
-	              				<li><a href="search_result.html">Commercial</a></li>
+								<li><a href="search_result.html">Land</a></li>
+								<li><a href="search_result.html">Industrial</a></li>
+								<li><a href="search_result.html">Commercial</a></li>
 							</ul>
 						</li>
-            			<li class="has-child"><a href="search_result.html">Rent long term</a>
+						<li class="has-child"><a href="search_result.html">Rent long term</a>
 							<ul class="child-navigation">
 								<li><a href="search_result.html">Apartment</a></li>
 								<li><a href="search_result.html">House</a></li>
-	              				<li><a href="search_result.html">Land</a></li>
-	              				<li><a href="search_result.html">Industrial</a></li>
-	              				<li><a href="search_result.html">Commercial</a></li>
+								<li><a href="search_result.html">Land</a></li>
+								<li><a href="search_result.html">Industrial</a></li>
+								<li><a href="search_result.html">Commercial</a></li>
 							</ul>
 						</li>
 						<li class="has-child"><a href="search_result.html">Rent short term</a>
 							<ul class="child-navigation">
 								<li><a href="search_result.html">Apartment</a></li>
 								<li><a href="search_result.html">House</a></li>
-	              				<li><a href="search_result.html">Land</a></li>
-	              				<li><a href="search_result.html">Industrial</a></li>
-	              				<li><a href="search_result.html">Commercial</a></li>
+								<li><a href="search_result.html">Land</a></li>
+								<li><a href="search_result.html">Industrial</a></li>
+								<li><a href="search_result.html">Commercial</a></li>
 							</ul>
 						</li>
 						<li class="has-child"><a href="#">Agents</a>
 							<ul class="child-navigation">
 								<li><a href="agency_profile.html">Find Agent</a></li>
 								<li><a href="agent_profile.html">Im An Agent</a></li>
-                 				<li><a href="add_property.html">Add Property</a></li>
+								<li><a href="add_property.html">Add Property</a></li>
 							</ul>
 						</li>
 						<li class="has-child"><a href="#">Investment Advice</a>
@@ -141,8 +144,8 @@
 							<li><a href="#" data-toggle="modal" data-target="#modal-login">Log in<i class="fa fa-arrow-right"></i></a></li>
 							<li><a href="#" data-toggle="modal" data-target="#modal-register">Create Account<i class="fa fa-arrow-right"></i></a></li>
 							<li>
-								<div class="lang">
-									<button onclick="language()" class="lang_btn"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</button>
+								<div onclick="language()"  class="lang">
+									<button class="lang_btn"><img class="lang_flag" src="assets/img/flag/uk.svg">EN</button>
 									<div id="menu_language" class="lang_content">
 										<a href="rtl.html"><img class="lang_flag" src="assets/img/flag/cn.svg">GR</a>
 										<a href="index_v_1.html"><img class="lang_flag" src="assets/img/flag/ru.svg">RU</a>
@@ -161,7 +164,7 @@
 			document.getElementById("menu_language").classList.toggle("show");
 		}
 		window.onclick = function(event) {
-			if (!event.target.matches('.lang_btn')) {
+			if (!event.target.matches('.lang, .lang_btn, .lang_flag')) {
 
 				var dropdowns = document.getElementsByClassName("lang_content");
 				var i;
