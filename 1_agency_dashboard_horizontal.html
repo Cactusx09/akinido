@@ -167,10 +167,10 @@
 									<div class="row">
 										<label class="col-md-offset-1 col-md-4 col-sm-3 col-xs-3">
 										Upload logo:</label>
-										<label class="upload_btn col-md-7 col-xs-4" for="file-upload">
+										<label class="upload_btn col-md-4 col-xs-4" for="file-upload">
 											Browser folder<img src="assets/img/upload_2.png" alt="" class="image-upload-icon">
 										</label>
-										<div class="upload_img col-xs-4">
+										<div class="upload_img col-md-3 col-xs-4">
 											<input id="file-upload" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Add Files">
 										</div>
 									</div>
@@ -339,13 +339,10 @@
 									</div>
 									<div class="form-group featured-image-block col-xs-12 col-md-4">
 										<label class="col-xs-12">Upload photos</label>
-										<label class="featured-image-block_btn col-xs-6 col-sm-3 col-md-7" for="file-upload">
+										<label class="featured-image-block_btn col-xs-6 col-sm-3 col-md-7" for="file-load">
 											Choose files<img src="assets/img/upload_2.png" alt="" class="image-upload-icon">
 										</label>
-										<div class="featured-image-block_img col-xs-4 col-sm-2 col-md-4">
-											<input id="file-upload" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Add Files">
-											<img src="assets/img/house.jpg" alt="">
-										</div>
+										<input id="file-load" type="file" class="file" required multiple data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Add Files">
 									</div>
 								</div>
 								<div class="form_control_prt pad col-md-12 col-xs-12">
@@ -968,17 +965,22 @@
 <div id="agency-modal-open"></div>
 <!-- End Modal login, register, custom gallery, agency message -->
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsCUwtYFS6pv7UPom9sCDJtpfbv2un6A0&libraries=places&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places&key=AIzaSyC4PfF1IcaUGi9v_jlJ3TeeMss7adWLoLA"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/icheck.min.js"></script>
 	<script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/fileinput.min.js"></script>
+	<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
+
 	<script type="text/javascript" src="assets/js/tmpl.js"></script>
 	<script type="text/javascript" src="assets/js/infobox.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
-	<script type="text/javascript" src="assets/js/icheck.min.js"></script>
-	<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
+	<script type="text/javascript" src="assets/js/fileinput.min.js"></script>
+
+
 	<script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 	<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="assets/js/selectize.min.js"></script>
@@ -986,7 +988,7 @@
 	<script type="text/javascript" src="assets/js/bootstrap-formhelpers.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.tablesorter.min.js"></script>
 
-<!--	<script type="text/javascript" src="assets/js/custom-map.js"></script>-->
+	<script type="text/javascript" src="assets/js/custom-map.js"></script>
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 
 <!--[if gt IE 8]>

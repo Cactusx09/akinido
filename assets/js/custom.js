@@ -161,10 +161,17 @@ $(document).ready(function($) {
         $('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
         $(this).parent('li').addClass('active').siblings().removeClass('active');
 
+
         priceSlider.appendTo($('.tabs ' + currentAttrValue).find('.price-range-wrapper'));
         priceSlider = null;
         e.preventDefault();
+		 if($(this).hasClass('map2')){
+				$('#footer').hide;
+			}else{
+				$('#footer').show;
+			}
     });
+
 
 //	//tabs
 	$('.s_admin__box_content_tabe').click(function(){
@@ -701,6 +708,7 @@ $(document).ready(function($) {
 			}
 		});
 	};
+
 
 
 
