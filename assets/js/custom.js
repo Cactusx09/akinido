@@ -165,12 +165,15 @@ $(document).ready(function($) {
         priceSlider.appendTo($('.tabs ' + currentAttrValue).find('.price-range-wrapper'));
         priceSlider = null;
         e.preventDefault();
-		 if($(this).hasClass('map2')){
-				$('#footer').hide;
-			}else{
-				$('#footer').show;
-			}
     });
+
+	if($('.tabs .tab-links a').hasClass('map2')){
+		$('#footer').hide();
+	}else{
+		$('#footer').show();
+	};
+
+
 
 
 //	//tabs
