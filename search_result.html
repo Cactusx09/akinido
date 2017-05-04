@@ -13,7 +13,7 @@
 	<title>akinido | search</title>
 </head>
 
-<body class="page-search overflow" id="page-top">
+<body class="page-search" id="page-top">
 	<!-- Preloader -->
 	<div id="page-preloader">
 		<div class="loader-ring"></div>
@@ -32,96 +32,100 @@
 			<div class="container">
 				<div class="wide_container_2">
 					<div class="tabs">
-						<header class="col-md-7 col-xs-12 no-pad">
-							<div class="location-map col-sm-6 col-xs-5">
-								<div class="input-group">
-									<input type="text" class="form-control" id="address-map" name="address" placeholder="Limassol, Cyprus">
-									<i class="fa fa-search"></i>
+						<div class="search_nav">
+							<header class="col-md-7 col-xs-12 no-pad">
+								<div class="location-map col-sm-6 col-xs-5">
+									<div class="input-group">
+										<input type="text" class="form-control" id="address-map" name="address" placeholder="Limassol, Cyprus">
+										<i class="fa fa-search"></i>
+									</div>
 								</div>
-							</div>
-							<div class="select-block select_pad col-sm-2 col-xs-2">
-								<select class="selection">
-									<option>Type</option>
-									<option>Any</option>
-									<option>Apartment</option>
-									<option>House</option>
-									<option>Land</option>
-									<option>Industrial</option>
-									<option>Commercial</option>
-								</select>
-							</div>
-							<div class="select-block select_pad col-sm-2 col-xs-2">
-								<select class="selection">
-									<option>Beds</option>
-									<option>Any</option>
-									<option>1+</option>
-									<option>2+</option>
-									<option>3+</option>
-									<option>4+</option>
-									<option>5+</option>
-								</select>
-							</div>
-							<div class="select-block col-md-2 col-xs-2 last">
-								<a class="options-button" id="toggle-link">More</a>
-							</div>
-							<div class="options-overlay col-md-offset-5 col-sm-offset-5 col-sm-7" id="hidden_content" style="display: none;">
-								<div class="row">
-									<div class="col-xs-6 top-mrg">
-										<div class="internal-container features">
-											<div class="form-group">
-												<label>Search Keyword</label>
-												<input type="text" class="form-control" placeholder="Type keyword">
-											</div>
-											<div class="form-group">
-												<label>Minimum price per m<sup>2</sup></label>
-												<input type="text" class="form-control" placeholder="Enter an Amount">
+								<div class="select-block select_pad col-sm-2 col-xs-2">
+									<select class="selection">
+										<option>Type</option>
+										<option>Any</option>
+										<option>Apartment</option>
+										<option>House</option>
+										<option>Land</option>
+										<option>Industrial</option>
+										<option>Commercial</option>
+									</select>
+								</div>
+								<div class="select-block select_pad col-sm-2 col-xs-2">
+									<select class="selection">
+										<option>Beds</option>
+										<option>Any</option>
+										<option>1+</option>
+										<option>2+</option>
+										<option>3+</option>
+										<option>4+</option>
+										<option>5+</option>
+									</select>
+								</div>
+								<div class="select-block col-md-2 col-xs-2 last">
+									<a class="options-button" id="toggle-link">More</a>
+								</div>
+								<div class="options-overlay col-md-offset-5 col-sm-offset-5 col-sm-7" id="hidden_content" style="display: none;">
+									<div class="row">
+										<div class="col-xs-6 top-mrg">
+											<div class="internal-container features">
+												<div class="form-group">
+													<label>Search Keyword</label>
+													<input type="text" class="form-control" placeholder="Type keyword">
+												</div>
+												<div class="form-group">
+													<label>Minimum price per m<sup>2</sup></label>
+													<input type="text" class="form-control" placeholder="Enter an Amount">
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-xs-6 top-mrg">
-										<div class="internal-container features">
-											<div class="form-group">
-												<label>Minimum covered area m<sup>2</sup></label>
-												<input type="text" class="form-control" placeholder="Enter an Amount">
-											</div>
-											<label>Construction:</label>
-											<section class="block">
-												<section>
-													<ul class="submit-features">
-														<li><div class="checkbox"><label><input type="checkbox">All</label></div></li>
-														<li><div class="checkbox"><label><input type="checkbox">New Build</label></div></li>
-													</ul>
+										<div class="col-xs-6 top-mrg">
+											<div class="internal-container features">
+												<div class="form-group">
+													<label>Minimum covered area m<sup>2</sup></label>
+													<input type="text" class="form-control" placeholder="Enter an Amount">
+												</div>
+												<label>Construction:</label>
+												<section class="block">
+													<section>
+														<ul class="submit-features">
+															<li><div class="checkbox"><label><input type="checkbox">All</label></div></li>
+															<li><div class="checkbox"><label><input type="checkbox">New Build</label></div></li>
+														</ul>
+													</section>
 												</section>
-											</section>
+											</div>
 										</div>
 									</div>
+								</div><!-- options-overlay -->
+							</header><!-- end header -->
+							<div class="col-md-2 col-ms-3 col-xs-12 cazc_vv searchs">
+								<div class="cazc_vv searchs_btn col-md-6">
+									<a href="javascript:void(0)" class="azz_btn search">search</a>
 								</div>
-							</div><!-- options-overlay -->
-						</header><!-- end header -->
-						<div class="col-md-2 col-ms-3 col-xs-12 cazc_vv searchs">
-							<div class="cazc_vv searchs_btn col-md-6">
-								<a href="javascript:void(0)" class="azz_btn search">search</a>
-							</div>
 
-							<div class="pad searchs_btn col-md-6">
-								<a href="javascript:void(0)" class="searchs_btn_save col-md-12">save search</a>
-								<a href="javascript:void(0)" class="searchs_btn_set col-md-12">set alert</a>
+								<div class="pad searchs_btn col-md-6">
+									<a href="javascript:void(0)" class="searchs_btn_save col-md-12">save search</a>
+									<a href="javascript:void(0)" class="searchs_btn_set col-md-12">set alert</a>
+								</div>
 							</div>
+							<ul class="tab-links col-md-3 col-xs-12">
+								<li class="col-lg-4 col-md-4 col-xs-4 no-pad active"><a href="#tab1" class="map2"><img src="assets/img/map.png" alt=""/>Map</a></li>
+								<li class="col-lg-4 col-md-4 col-xs-4 no-pad"><a href="#tab2"><img src="assets/img/grid.png" alt=""/>Grid</a></li>
+								<li class="col-lg-4 col-md-4 col-xs-4 bdr-rgh no-pad"><a href="#tab3"><i class="fa fa-th-list"></i>List</a></li>
+							</ul>
 						</div>
-						<ul class="tab-links col-md-3 col-xs-12">
-							<li class="col-lg-4 col-md-4 col-xs-4 no-pad active"><a href="#tab1" class="map2"><img src="assets/img/map.png" alt=""/>Map</a></li>
-							<li class="col-lg-4 col-md-4 col-xs-4 no-pad"><a href="#tab2"><img src="assets/img/grid.png" alt=""/>Grid</a></li>
-							<li class="col-lg-4 col-md-4 col-xs-4 bdr-rgh no-pad"><a href="#tab3"><i class="fa fa-th-list"></i>List</a></li>
-						</ul>
 						<!-- tab-links -->
 						<div class="tab-content">
 							<div id="tab1" class="tab" style="display: block;">
 								<div class="sidebar col-sm-4 col-xs-12">
 									<!-- Map -->
-									<div id="map"></div>
+									<div class="sidebar_map">
+										<div id="map"></div>
+									</div>
 									<!-- end Map -->
 								</div><!-- sidebar -->
-								<div class="content scroll col-sm-8 col-xs-12">
+								<div class="content col-sm-8 col-xs-12">
 									<!-- Range slider -->
 									<div class="col-xs-12 p_35">
 										<div class="row">
@@ -461,20 +465,14 @@
 														<div class="nav-next"><a href="#">NEXT PAGE</a></div>
 													</nav>
 												</div>
-												<section id="footer-copyright">
-													<div class="container">
-														<a href="http://akinido.com" target="blank">© akinido.com</a>
-														<span class="pull-right">A Cellway Trading LTD Company</span>
-													</div>
-												</section>
-											</div><!-- end row -->
+											</div> <!--end row -->
 										</div><!-- end container -->
-									</div>	<!-- end wide-2 -->
+									</div>
 								</div>
 							</div>
 							<div id="tab2" class="tab">
 								<div class="col-xs-12 content_2">
-									<div class="scroll_2 col-md-10 col-md-offset-1">
+									<div class="col-md-10 col-md-offset-1">
 										<!-- Range slider -->
 										<div class="explore_grid">
 											<div class="row">
@@ -1221,6 +1219,7 @@
 	<script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 	<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.slider.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.sticky.js"></script>
 	<script type="text/javascript" src="assets/js/custom-map.js"></script>
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	<script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>

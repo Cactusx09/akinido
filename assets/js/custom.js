@@ -166,15 +166,18 @@ $(document).ready(function($) {
         priceSlider = null;
         e.preventDefault();
     });
-
-	if($('.tabs .tab-links a').hasClass('map2')){
-		$('#footer').hide();
-	}else{
-		$('#footer').show();
-	};
-
-
-
+//	var height = $('#header').height() + $('.tab-links').height();
+//	var content_height = $('#header').height() + $("#page-content-search").height();
+//	var to_footer = $('body,html').height() - content_height;
+//	var fot = $('.inner').height;
+//	var sticky_flag = true;
+	$(window).load(function(){
+		$('.sidebar_map').sticky({
+			topSpacing: 156,
+			bottomSpacing: 330,
+			zIndex: 99,
+		});
+	});
 
 //	//tabs
 	$('.s_admin__box_content_tabe').click(function(){
