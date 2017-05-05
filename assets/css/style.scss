@@ -7156,7 +7156,11 @@ input[type="checkbox"] {
   // -webkit-box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.15);
   // box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.15);
   background: #fff;
-  height: 350px;
+}
+#tab1{
+	.content{
+		padding-top: 30px;
+	}
 }
 /* line 572, ../scss/helpers/_forms.scss */
 .tabs .tab {
@@ -10376,6 +10380,15 @@ body {
 			padding-top: 6px;
 			background: #fefefe;
 			position: relative;
+			.tab-pane.active{
+				.form_control_prt,.row,.district_item,.form-group{
+					@for $n from 1 through 25{
+						&:nth-of-type(#{$n}){
+							animation: down .35s*($n/2);
+						}
+					}
+				}
+			}
 			li{
 				margin-bottom: -2px;
 			}
@@ -12698,5 +12711,34 @@ body {
 		z-index: 1;
 		width: 100%;
 		display: block;
+		.s_admin__box_content_pas-use_block,.form-inline,tbody tr{
+			@for $n from 1 through 25{
+				&:nth-of-type(#{$n}){
+					animation: down .4s*($n/2);
+				}
+			}
+		}
 	}
+}
+.tab-content .tab{
+	display: none;
+	&._active{
+		display: block !important;
+		.prop,.row.white{
+			@for $n from 1 through 25{
+				&:nth-of-type(#{$n}){
+					animation: down .55s*($n/2);
+				}
+			}
+		}
+	}
+}
+
+@keyframes down {
+	from { opacity: 0; transform: translateY(-35px);}
+	to { opacity: 1; transform: none;}
+}
+@keyframes up {
+	from { opacity: 0; transform: translateY(35px);}
+	to { opacity: 1; transform: none;}
 }

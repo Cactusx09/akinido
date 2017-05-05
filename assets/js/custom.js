@@ -158,9 +158,24 @@ $(document).ready(function($) {
     $('.tabs .tab-links a').on('click', function(e)  {
         var currentAttrValue = $(this).attr('href');
         var priceSlider = $('.jslider').detach();
-        $('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-
+//        $('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
+		$('.tabs ' + currentAttrValue).addClass('_active').siblings()
+			.removeClass('_active');  $(this).parent('li').addClass('active').siblings().removeClass('active');
+		if($(this).closest('._map_flag_tabs').length){
+			$('html, body').stop().animate({scrollTop: 0}, 250);
+		}
+		if (window.matchMedia('(min-width: 767px)').matches && $('.sidebar_map').length) {
+			if(currentAttrValue!='#tab1'){
+				$('.sidebar_map').unstick();
+			}else{
+				$('.sidebar_map').sticky({
+					topSpacing: 156,
+					bottomSpacing: 330,
+					zIndex: 99,
+				});
+				$('.sidebar_map').sticky('update');
+			}
+		}
 
         priceSlider.appendTo($('.tabs ' + currentAttrValue).find('.price-range-wrapper'));
         priceSlider = null;
@@ -172,11 +187,14 @@ $(document).ready(function($) {
 //	var fot = $('.inner').height;
 //	var sticky_flag = true;
 	$(window).load(function(){
-		$('.sidebar_map').sticky({
-			topSpacing: 156,
-			bottomSpacing: 330,
-			zIndex: 99,
-		});
+		if (window.matchMedia('(min-width: 767px)').matches && $('.sidebar_map').length) {
+			$('.sidebar_map').sticky({
+				topSpacing: 156,
+				bottomSpacing: 330,
+				zIndex: 99,
+			});
+		}
+
 	});
 
 //	//tabs
@@ -484,7 +502,9 @@ $(document).ready(function($) {
 
 	//Calendar "bootstrap-formhelpers"
 	//http://xdsoft.net/jquery-plugins/demo/bfh-datepicker/
-	$('.bfh-datepicker-toggle').bfhdatepicker('toggle');
+	if($('.bfh-datepicker-toggle').length){
+		$('.bfh-datepicker-toggle').bfhdatepicker('toggle');
+	}
 
 	//table
 	//http://w3pro.ru/article/plagin-jquery-dlya-sortirovki-html-tablits
@@ -605,114 +625,118 @@ $(document).ready(function($) {
 	};
 
 	window.onload = function () {
-		var ctx = document.getElementById("canvas").getContext("2d");
-		ctx.canvas.height = 130;
-		window.myBar = new Chart(ctx, {
-			type: 'bar',
-			data: barChartData,
-			options: {
-				responsive: true,
-				tooltips: {
-					mode: 'label'
-				},
-				elements: {
-					line: {
-						fill: false
+		if($('#canvas').length){
+			var ctx = document.getElementById("canvas").getContext("2d");
+			ctx.canvas.height = 130;
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					tooltips: {
+						mode: 'label'
+					},
+					elements: {
+						line: {
+							fill: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							barThickness : 42,
+							display: true,
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+							}
+						}],
+						yAxes: [{
+							type: "linear",
+							display: true,
+							position: "left",
+							id: "y-axis-1",
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+
+							}
+						}, {
+							type: "linear",
+							display: true,
+							position: "right",
+							id: "y-axis-2",
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+
+							}
+						}]
 					}
-				},
-				scales: {
-					xAxes: [{
-						barThickness : 42,
-						display: true,
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-						}
-					}],
-					yAxes: [{
-						type: "linear",
-						display: true,
-						position: "left",
-						id: "y-axis-1",
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-
-						}
-					}, {
-						type: "linear",
-						display: true,
-						position: "right",
-						id: "y-axis-2",
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-
-						}
-					}]
 				}
-			}
-		});
-		var ctx2 = document.getElementById("myChart").getContext("2d");
-		ctx2.canvas.height = 300;
-		window.myBar2 = new Chart(ctx2, {
-			type: 'bar',
-			data: barChartData2,
-			options: {
-				responsive: true,
-				tooltips: {
-					mode: 'label'
-				},
-				elements: {
-					line: {
-						fill: false
+			});
+		}
+		if($('#myChart').length){
+			var ctx2 = document.getElementById("myChart").getContext("2d");
+			ctx2.canvas.height = 300;
+			window.myBar2 = new Chart(ctx2, {
+				type: 'bar',
+				data: barChartData2,
+				options: {
+					responsive: true,
+					tooltips: {
+						mode: 'label'
+					},
+					elements: {
+						line: {
+							fill: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							barThickness : 42,
+							display: true,
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+							}
+						}],
+						yAxes: [{
+							type: "linear",
+							display: true,
+							position: "left",
+							id: "y-axis-1",
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+
+							}
+						}, {
+							type: "linear",
+							display: true,
+							position: "right",
+							id: "y-axis-3",
+							gridLines: {
+								display: false
+							},
+							labels: {
+								show: true,
+
+							}
+						}]
 					}
-				},
-				scales: {
-					xAxes: [{
-						barThickness : 42,
-						display: true,
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-						}
-					}],
-					yAxes: [{
-						type: "linear",
-						display: true,
-						position: "left",
-						id: "y-axis-1",
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-
-						}
-					}, {
-						type: "linear",
-						display: true,
-						position: "right",
-						id: "y-axis-3",
-						gridLines: {
-							display: false
-						},
-						labels: {
-							show: true,
-
-						}
-					}]
 				}
-			}
-		});
+			});
+		}
 	};
 
 
