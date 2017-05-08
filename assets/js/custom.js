@@ -357,6 +357,24 @@ $(document).ready(function($) {
         }
     });
 
+	//main page logo show
+	var btn_flag = false;
+	$('.logo_show').click(function(e){
+		var el = $(this),
+			wrp = el.closest('.logo_container'),
+			hidden = wrp.find('.logo_wrp_hidden');
+		e.preventDefault();
+		if(!btn_flag){
+			hidden.addClass('_visible');
+			el.text('hide');
+			btn_flag = true;
+		}else{
+			hidden.removeClass('_visible');
+			el.text('show all');
+			btn_flag = false;
+		}
+	});
+
     // Menu Button
     $('.navbar a.drop-left, .navbar a.drop-close').live('click', function (e) {
         //pressing more first time
